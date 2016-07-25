@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/angular-material/angular-material.min.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-aria.min.js"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/Demo.js"></script>
+    <title></title>
+    <style>
+        /*This class displays the UP arrow*/
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid black;
+            display: inline-block;
+        }
+
+        /*This class displays the DOWN arrow*/
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid black;
+            display: inline-block;
+        }
+        th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="col-sm-9 col-sm-offset-0">
+    </div>
+    <div ng-controller="PoojaController">
+        <div class="form-horizontal">
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">First Number:</label>
+                <input type="text" class="form-control" ng-model="num1" placeholder="Enter first Number" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">Second Number:</label>
+                <input type="text" class="form-control" ng-model="num2" placeholder="Enter Second Number" />
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-5">
+                <br />
+                <input type="button" class="btn btn-danger" ng-click="Addition()" value="Submit" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-5">
+                Sum : {{result}}
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="PoojaController">
+        <div class="form-horizontal">
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">First Number:</label>
+                <input type="text" class="form-control" ng-model="num1" placeholder="Enter first Number" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">Second Number:</label>
+                <input type="text" class="form-control" ng-model="num2" placeholder="Enter Second Number" />
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-5">
+                <br />
+                <input type="button" class="btn btn-danger" ng-click="Addition()" value="Submit" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-5">
+                Sum : {{result}}
+            </div>
+        </div>
+    </div>
+    <div ng-controller="PoojaController">
+        <div class="form-horizontal">
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">First Number:</label>
+                <input type="text" class="form-control" ng-model="num1" placeholder="Enter first Number" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">Second Number:</label>
+                <input type="text" class="form-control" ng-model="num2" placeholder="Enter Second Number" />
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-5">
+                <br />
+                <input type="button" class="btn btn-danger" ng-click="Addition()" value="Submit" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-5">
+                Sum : {{result}}
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="CountryController">
+        <div class="form-horizontal">
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">First Number:</label>
+                <input type="text" class="form-control" ng-model="num1" placeholder="Enter first Number" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-4">
+                <label for="usr">Second Number:</label>
+                <input type="text" class="form-control" ng-model="num2" placeholder="Enter Second Number" />
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-5">
+                <br />
+                <input type="button" class="btn btn-danger" ng-click="Addition()" value="Submit" />
+            </div>
+            <br />
+            <div class="col-sm-4 col-sm-offset-5">
+                Sum : {{result}}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8 col-sm-offset-4">
+        <div ng-controller="TwoWayBindingController">
+            <div class="form-horizontal">
+                <input type="text" ng-model="Ss" />
+                <br />
+                <br />
+                {{Message}}
+                <br />
+                <br />
+                {{Ss}}
+            </div>
+        </div>
+        <div ng-controller="TwoWayBindingController">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Class</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" ng-model="Students.Name" />
+                    </td>
+                    <td>
+                        <input type="text" ng-model="Students.Class" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr>
+                    <td>{{Students.Name}}</td>
+                    <td>{{Students.Class}}</td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <div class="form-horizontal">
+            <div ng-controller="RepeatController">
+                <table class="table-bordered">
+                    <tr>
+                        <th>
+                            First Name
+                        </th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                    </tr>
+                    <tody>
+                        <tr ng-repeat="e in Emploee | orderBy:'+firstName' ">
+                            <td>{{e.firstName}}</td>
+                            <td>{{e.LastName}}</td>
+                            <td>{{e.Address}}</td>
+                        </tr>
+                    </tody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-horizontal">
+            <div ng-controller="CountryController">
+                <ul>
+                    <li ng-repeat="country in Countryies">
+                        {{country.Name}}
+                        <ul>
+                            <li ng-repeat="city in country.City">
+                                {{city.Name}}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+            <div ng-controller="LikeDislikeController">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Like</th>
+                            <th>DisLike</th>
+                            <th>Like/Dislike</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="obj in LikeObj">
+                            <td>{{obj.subject}}</td>
+                            <td>{{obj.Like}}</td>
+                            <td>{{obj.Dislike}}</td>
+                            <td>
+                                <input type="button" ng-click="IncermentLikes(obj)" value="Like">
+
+                                <input type="button" ng-click="IncermentDisLikes(obj)" value="DisLike">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div ng-controller="OrderByController">
+                <br />
+                <br />
+                Select :
+                <select ng-model="SortColumn">
+                    <option value="Name">Employee Name</option>
+                    <option value="City">City</option>
+                    <option value="-Id">ID</option>
+                    <option value="-Salry">Salary</option>
+                </select>
+
+                <table class="table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sl.No</th>
+                            <th>Employee Name</th>
+                            <th>City</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="emplyoee in Employees | orderBy:SortColumn">
+                            <td>{{emplyoee.Id}}</td>
+                            <td>{{emplyoee.Name}}</td>
+                            <td>{{emplyoee.City}}</td>
+                            <td>{{emplyoee.Salry}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+            </div>
+        </div>
+
+        <div>
+            <div ng-controller="OrderByHeaderClickController">
+               
+                <table>
+                    <thead>
+                        <tr>
+                            <th ng-click="sortData('Id')">
+                                SlNo <div ng-class="getSortClass('Id')"></div>
+                            </th>
+                            <th ng-click="sortData('name')">
+                                Name <div ng-class="getSortClass('name')"></div>
+                            </th>
+                            <th ng-click="sortData('dateOfBirth')">
+                                Date of Birth <div ng-class="getSortClass('dateOfBirth')"></div>
+                            </th>
+                            <th ng-click="sortData('gender')">
+                                Gender <div ng-class="getSortClass('gender')"></div>
+                            </th>
+                            <th ng-click="sortData('salary')">
+                                Salary <div ng-class="getSortClass('salary')"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+                            <td> {{ employee.Id }} </td>
+                            <td> {{ employee.name }} </td>
+                            <td> {{ employee.dateOfBirth | date:"dd/MM/yyyy" }} </td>
+                            <td> {{ employee.gender }} </td>
+                            <td> {{ employee.salary  }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+            </div>
+        </div>
+      
+        
+    </div>
+  
+</body>
+</html>
